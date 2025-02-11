@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Wave Optics on the GPU</title>
+	</head>
+	<body>
+		<label for="size">image size (m)</label>
+		<input type="text" id="size" value="2e-4">
+		<br>
+		<label for="w0">beam waist (m)</label>
+		<input type="text" id="w0" value="5e-5">
+		<br>
+		<label for="wavelength">wavelength (m)</label>
+		<input type="text" id="wavelength" value="700e-9">
+		<br>
+		<input type="button" id="start" value="start">
+		<input type="button" id="stop" value="stop">
+		<input type="button" id="reset" value="reset">
+		<br>
+		<input type="radio" name="lensType" id="simple" value="simple">
+		<label for="simple">simple lens</label>
+		<input type="radio" name="lensType" id="fresnel" value="fresnel" checked>
+		<label for="fresnel">fresnel lenses</label>
+		<br>
+		<label for="xCount">x array size</label>
+		<input type="text" id="xCount" value="11">
+		<br>
+		<label for="yCount">y array size</label>
+		<input type="text" id="yCount" value="11">
+		<br>
+		<label for="xShift">x shift (m)</label>
+		<input type="text" id="xShift" value="5e-6">
+		<br>
+		<label for="yShift">y shift (m)</label>
+		<input type="text" id="yShift" value="5e-6">
+		<br>
+		<label for="focalLength">focal length (m)</label>
+		<input type="text" id="focalLength" value="1e-2">
+		<br>
+		<label for="deltaZ">delta z (m)</label>
+		<input type="text" id="deltaZ" value="1e-4">
+		<br>
+		<input type="text" id="propagationRange" value=0>
+		<input type="range" id="propagationSlider" min=0 max=1023 value=0>
+		<br>
+		<input type="radio" name="propagationType" id="static" value="static" checked>
+		<label for="static">static</label>
+		<input type="radio" name="propagationType" id="singlePropagate" value="singlePropagate">
+		<label for="singlePropagate">single propagation</label>
+		<input type="radio" name="propagationType" id="xzPlane" value="xzPlane">
+		<label for="xzPlane">xz-plane</label>
+		<input type="radio" name="propagationType" id="yzPlane" value="yzPlane">
+		<label for="yzPlane">yz-plane</label>
+		<br>
+		<input type="button" id="propagate" value="propagate">
+		<br>
+		<label for="phase">display phase</label>
+		<input type="checkbox" id="phase" checked>
+		<br>
+		<label for="exposure">exposure</label>
+		<input type="range" id="exposure" min="0" max="6" step = "0.1" value="0">
+		<input type="text" id="exposureText" value="1">
+		<br>
+		<canvas id="display" width="1024" height="1024"></canvas>
+		<script type="module", src="./js/main.js"></script>
+	</body>
+</html>
